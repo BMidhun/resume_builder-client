@@ -48,14 +48,29 @@ class Home extends Component {
 
         // console.log(this.props.data)
 
-        axios.post('https://cryptic-garden-96376.herokuapp.com/generatePDF',this.props.data,{responseType:'blob',headers:{"Content-Type":"application/json"}})
-        .then(res => {
+        // axios.post('https://cryptic-garden-96376.herokuapp.com/generatePDF',this.props.data,{responseType:'blob',headers:{"Content-Type":"application/json"}})
+        // .then(res => {
 
-            const pdf = new Blob([res.data,{type:'application/pdf'}]);
+        //     const pdf = new Blob([res.data,{type:'application/pdf'}]);
 
-            saveAs(pdf,'resume.pdf');
+        //     saveAs(pdf,'resume.pdf');
             
-        })
+        // })
+
+        fetch('https://cryptic-garden-96376.herokuapp.com/generatePDF',{
+            method:'post',
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({
+
+                data:this.props.data
+            })
+        }).then(response => response.blob()).then(
+            data => {
+                const pdf = new Blob([data,{type:'application/pdf'}]);
+
+                saveAs(pdf,'resume.pdf');
+            }
+        )
 
 
     
