@@ -1,5 +1,6 @@
 import React from 'react';
 import './css/layout.css'
+import Home from '../../Home/Home'
 
 
 const Layout = (props) => {
@@ -15,7 +16,7 @@ const Layout = (props) => {
 
         </header>
     
-            {props.children}
+            <Home />
       </div>
 
     )

@@ -91,7 +91,7 @@ class Bio extends Component {
             if(ele === 'Summary') 
                return   <Form.Textarea key={ele} required name = {ele}  rows="8" cols="12"   placeholder="Write about yourself" onChange={this.addFormData}></Form.Textarea>
 
-            return     <Form.Input key={ele} type="text"  placeholder={`${ele}`} required name= {ele}  onChange={this.addFormData}></Form.Input>
+            return     <Form.Input key={ele} type="text"   placeholder={`${ele}`} required name= {ele}  onChange={this.addFormData}></Form.Input>
         })
 
     }
