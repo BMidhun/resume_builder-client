@@ -49,7 +49,7 @@ class Home extends Component {
         // console.log(this.props.data)
 
         console.log(this.props.data)
-        axios.post('http://localhost:3003/generatePDF',this.props.data,{responseType:'blob'})
+        axios.post('https://cryptic-garden-96376.herokuapp.comgi/generatePDF',this.props.data,{responseType:'blob'})
         .then(res => {
 
             const pdf = new Blob([res.data,{type:'application/pdf'}]);
