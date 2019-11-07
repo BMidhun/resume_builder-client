@@ -1,0 +1,12 @@
+header {
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: whitesmoke;
+    width: 100%;
+    z-index: 1;
+    box-shadow: -2px -1px 11px -3px grey;
+    font-size: 25px;
+    padding-left: 15px;
+}
