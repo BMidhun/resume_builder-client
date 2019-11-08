@@ -87,13 +87,22 @@ class Experience extends Component {
 
     }
 
-    removeForm = () => {
+   
+removeForm = () => {
 
-        this.setState({index:this.state.index-1},()=> {
-            alert('Job removed')
-        })
-        
-    }
+    if(this.state.index !==-1){
+
+        let form = this.state.formData
+        form.splice(-1,1);
+
+    this.setState({index:this.state.index-1, formData:form},()=> {
+        alert('Job removed')
+    })
+
+}
+    
+}
+
     validate = () => {
 
         let formData = this.state.formData;

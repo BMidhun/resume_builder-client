@@ -11,7 +11,7 @@ class Bio extends Component {
         super(props)
 
         this.state = {
-            addSocial:false,
+        
             socialIndex : -1,
             formData : {
 
@@ -171,6 +171,20 @@ class Bio extends Component {
     //     console.log(this.props)
     // }
 
+    removeSocial = () => {
+
+        let socialAccounts = this.state.formData.socialAccounts;
+        socialAccounts.splice(-1,1);
+
+        if(this.state.socialIndex !== -1)
+         {
+            this.setState({socialIndex : this.state.socialIndex-1,socialAccounts : socialAccounts})       
+          }
+
+        
+
+    }
+
     render() {
 
         // console.log(this.props)
@@ -182,7 +196,7 @@ class Bio extends Component {
                 {this.renderSocial()} 
                 </Form>
                 <Button  className="form-btn" info onClick={() => this.setState({addSocial:true,socialIndex : this.state.socialIndex+1})}>Add Social Link</Button>
-                <Button  className="form-btn" info onClick={() => this.setState({addSocial:true,socialIndex : this.state.socialIndex-1})}>Remove Social Link</Button>
+                <Button  className="form-btn" info onClick={() => this.removeSocial()}>Remove Social Link</Button>
                <Button   className = "form-btn" onClick={this.validate}>Submit</Button> 
                 
                 

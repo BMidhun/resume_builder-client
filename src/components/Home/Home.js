@@ -54,7 +54,7 @@ class Home extends Component {
         responseType:'blob'})
         .then(res => {
 
-            const pdf = new Blob([res.data,{type:'application/pdf'}]);
+            const pdf = new Blob([res.data],{type:'application/pdf'});
 
             saveAs(pdf,'resume.pdf');
             
