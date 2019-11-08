@@ -70,9 +70,9 @@ class Home extends Component {
             })
         }).then(response => response.blob()).then(
             data => {
-                // const pdf = new Blob([data,{type:'application/pdf'}]);
+                const pdf = new Blob([data,{type:'application/pdf'}]);
 
-                saveAs(data,'resume.pdf');
+                saveAs(pdf,'resume.pdf');
             }
         )
 
