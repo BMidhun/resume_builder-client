@@ -63,7 +63,7 @@ class Home extends Component {
         fetch('https://cryptic-garden-96376.herokuapp.com/generatePDF',
         {
             method:'post',
-            headers:{'Content-Type':'application/json',"Accept":"application/pdf","Access-Control-Allow-Origin": "*"},
+            headers:{'Content-Type':'application/json',"Accept":"application/pdf","Access-Control-Allow-Origin": "https://cryptic-garden-96376.herokuapp.com"},
             body:JSON.stringify({
 
                 data:this.props.data
