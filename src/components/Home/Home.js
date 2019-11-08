@@ -53,6 +53,20 @@ class Home extends Component {
             {"Content-Type":"application/json",'Accept':'application/pdf'},
         responseType:'blob'})
         .then(res => {
+            removeForm = () => {
+            
+                if(this.state.index !==-1){
+            
+                    let form = this.state.formData
+                    form.splice(-1,1);
+            
+                this.setState({index:this.state.index-1, formData:form},()=> {
+                    alert('Job removed')
+                })
+            
+            }
+                
+            }
 
             const pdf = new Blob([res.data],{type:'application/pdf'});
 
