@@ -60,7 +60,7 @@ class Home extends Component {
             
         // })
 
-        fetch('http://localhost:3003/generatePDF',
+        fetch('https://cryptic-garden-96376.herokuapp.com/generatePDF',
         {
             method:'post',
             headers:{'Content-Type':'application/json',"Accept":"application/pdf"},
