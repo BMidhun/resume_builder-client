@@ -60,8 +60,6 @@ class Home extends Component {
             
         // })
 
-        // https://cryptic-garden-96376.herokuapp.com/generatePDF
-
         fetch('https://cryptic-garden-96376.herokuapp.com/generatePDF',
         {
             method:'post',
@@ -99,7 +97,7 @@ class Home extends Component {
                 </ListGroup>
 
 
-                <Button primary onClick={() => this.submitForm()} style={{margin: '6% 0% 6% 0%'}}>Submit Resume</Button>
+                <Button primary onClick={() => this.submitForm()} style={{margin: '6% 0% 6% 0%'}}>Download Resume</Button>
                     
 
 
