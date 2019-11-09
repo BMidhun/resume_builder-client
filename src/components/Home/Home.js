@@ -60,17 +60,19 @@ class Home extends Component {
             
         // })
 
+        // https://cryptic-garden-96376.herokuapp.com/generatePDF
+
         fetch('https://cryptic-garden-96376.herokuapp.com/generatePDF',
         {
             method:'post',
-            headers:{'Content-Type':'application/json',"Accept":"application/pdf","Access-Control-Allow-Origin": "https://cryptic-garden-96376.herokuapp.com"},
+            headers:{'Content-Type':'application/json',"Accept":"application/octet-stream","Access-Control-Allow-Origin": "https://cryptic-garden-96376.herokuapp.com"},
             body:JSON.stringify({
 
                 data:this.props.data
             })
         }).then(response => response.blob()).then(
             data => {
-                const pdf = new Blob([data,{type:'application/pdf'}]);
+                const pdf = new Blob([data,{type:'application/octet-stream'}]);
 
                 saveAs(pdf,'resume.pdf');
             }
